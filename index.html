@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Tab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="widgets.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+        Order of operations / Widget ideas
+
+        -Firebase Database
+
+        -Todo List
+            -Timeframe
+            -Countdown
+            -Add new item
+            -Stores in database
+            -Reloads items
+
+
+        -Stopwatch
+
+
+
+        -Clock
+
+
+
+        -Timer
+
+
+
+        -Fav Websites
+            -Possible prediction on which site I am about to visit
+
+
+
+        -Sticky notes
+
+
+
+        -Local weather
+    -->
+
+
+    <h1>New Tab</h1>
+    <script src="widget-list.js"></script>
+
+
+
+    <div id="photo-gallery">
+        <ul populate="current" format="<li style='background-image:url($src)'/>"></ul>
+        <button onclick="widget(this).changeSlide(-1);">Prev</button>
+        <button onclick="widget(this).changeSlide(1);">Next</button>
+    </div>
+
+
+    <div id="todo-list">
+        <h3 populate="title"></h3>
+        <form onsubmit="widget(this).addItem();">
+            <input placeholder="New Item" /><button>Add</button>
+        </form>
+        <ul populate="items" in="<li></li>" format="$title" with="<button onclick='widget(`todo-list`).removeItem(this)'>X</button>"></ul>
+    </div>
+
+    <div id="tic-tac-toe">
+        <h3 populate="score" format="$0-$1"></h3>
+        <div populate="0" in="<button class='cell'>$0</button>"></div>
+        <div populate="1" in="<button class='cell'>$1</button>"></div>
+        <div populate="2" in="<button class='cell'>$2</button>"></div>
+    </div>
+
+</body>
+
+</html>
