@@ -64,7 +64,6 @@ registerWidget({
 registerWidget({
     id: 'todo-list',
     disabled: true,
-    styles: {'*': {display: 'none'}},
     state: {
         title: 'Todo List',
         items: []
@@ -119,7 +118,6 @@ registerWidget({
 
 registerWidget({
     id: 'tic-tac-toe',
-    styles: {'*': {display: 'none'}},
     state: {
         title: 'Tic Tac Toe',
         turn: 0,
